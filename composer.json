@@ -1,0 +1,29 @@
+{
+    "name": "luminee/user",
+    "description": "Build one user with multi identity account",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LuminEe",
+            "email": "1123462990@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Luminee\\User\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Luminee\\User\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "5.1.x|5.5.x",
+        "luminee/laravel-base": "*"
+    }
+}
