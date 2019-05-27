@@ -1,5 +1,5 @@
 {
-    "name": "luminee/user",
+    "name": "luminee/portal",
     "description": "Build one user with multi identity account",
     "type": "library",
     "license": "MIT",
@@ -11,19 +11,20 @@
     ],
     "autoload": {
         "psr-4": {
-            "Luminee\\User\\": "src/"
+            "Luminee\\Portal\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Luminee\\User\\ServiceProvider"
+                "Luminee\\Portal\\ServiceProvider"
             ]
         }
     },
     "minimum-stability": "dev",
     "require": {
         "laravel/framework": "5.1.x|5.5.x",
-        "luminee/laravel-base": "*"
+        "luminee/laravel-base": "*",
+        "tymon/jwt-auth": "0.5.12"
     }
 }

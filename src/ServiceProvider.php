@@ -1,8 +1,9 @@
 <?php
 
-namespace Luminee\User;
+namespace Luminee\Portal;
 
 use Illuminate\Support\ServiceProvider as _ServiceProvider;
+use Tymon\JWTAuth\Providers\JWTAuthServiceProvider;
 
 class ServiceProvider extends _ServiceProvider
 {
@@ -13,7 +14,7 @@ class ServiceProvider extends _ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([realpath(__DIR__.'/../config/user.php') => config_path('LumineeUser.php')]);
+        $this->publishes([realpath(__DIR__.'/../config/portal.php') => config_path('portal.php')]);
     }
     
     /**
@@ -23,6 +24,7 @@ class ServiceProvider extends _ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(realpath(__DIR__.'/../config/user.php'), 'LumineeUser');
+        $this->mergeConfigFrom(realpath(__DIR__.'/../config/portal.php'), 'portal');
+        $this->app->register(JWTAuthServiceProvider::class);
     }
 }

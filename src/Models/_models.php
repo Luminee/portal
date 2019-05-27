@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'user' => 'Luminee\Label\Models\User',
-    'type' => 'Luminee\Label\Models\Type',
-    'account' => 'Luminee\Label\Models\Account'
+    'user' => 'Luminee\Portal\Models\User',
+    'type' => 'Luminee\Portal\Models\Type',
+    'account' => 'Luminee\Portal\Models\Account'
 ];

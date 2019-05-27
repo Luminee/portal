@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserTable extends Migration
+class CreatePortalAccountTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,19 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('portal_account', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('username')->nullable();
-            $table->string('email')->nullable();
-            $table->bigInteger('phone')->nullable();
-            $table->string('password', 60);
+            $table->integer('user_id');
+            $table->integer('type_id');
+            $table->string('nickname');
+            $table->string('avatar')->nullable();
             $table->boolean('is_available');
             $table->softDeletes();
             $table->timestamps();
 
-            $table->unique('username');
-            $table->unique('email');
-            $table->unique('phone');
+            $table->index('user_id');
+            $table->index('type_id');
         });
     }
 
@@ -37,6 +36,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('label_attribute');
+        //
     }
 }

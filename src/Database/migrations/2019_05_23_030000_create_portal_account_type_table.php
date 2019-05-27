@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserAccountTypeTable extends Migration
+class CreatePortalAccountTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserAccountTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_account_type', function (Blueprint $table) {
+        Schema::create('portal_account_type', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateUserAccountTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('label_type');
+        //
     }
 }
